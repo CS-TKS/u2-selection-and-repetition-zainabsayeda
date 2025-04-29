@@ -37,14 +37,11 @@ while i < len(questions):
     answer = input(questions[i])
     if answer == "yes":
 
-        # add item to used list
-
-        used_items.append(items[i])
-        # increasing the score everytime the user says yes
-        score = score + 1
-        i = i + 1 #moving on to the next question
+        used_items.append(items[i])   # add item to used list
+        score = score + 1  # increasing the score everytime the user says yes
+        i = i + 1 # moving on to the next question
     elif answer == "no":
-        i = i + 1 #moving on to the next question
+        i = i + 1 # moving on to the next question
     else:
         print("You can only answer with yes or no")
 
@@ -54,26 +51,26 @@ while i < len(questions):
 
 #showing plastic items using the for loop
 if len(used_items) > 0: #
-    print("Plastic items used:")
-j = 0
-while j < len(used_items):
-    print(used_items[j])
-    j = j + 1
+    print("Plastic items used: ")
+for item in used_items:
+    print(item)
 
 else:
-    print("Great job you didnt use any plastic items today")
+    print(" ")
+    print("Thank you for completing the quiz!")
 
 #feedback based off of the score
 if score == 0:
     print(" You are a EcoHero! You are helping save the planet")
 elif score <= 2:
+    print(" ")
     print(" Good job you are right on track.")
 elif score <= 4:
-    print (" You are doing olay but you have to use less plastic")
+    print (" You are doing okay but you have to use less plastic")
 else:
     print("You've used a dangerous amount of plastic use less!")
 
-#ending quiz display
+# ending quiz display
 print("Thank you for using the eco quiz" + name)
 
 
